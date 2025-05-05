@@ -61,10 +61,11 @@ router.put('/courses/:id', async(req, res) => {
         res.status(400).send(err)
     }
 })
-router.delete('courses/:id', async(req, res) => {
+router.delete('/courses/:id', async(req, res) => {
     try {
-        const course = await course.deleteOne({_id: req.params.id}, course)
+        const course = await Course.findById(req.params.id)
         console.log(course)
+        await Course.deleteOne({_id: course._id})
         res.sendStatus(204)
 
     }
