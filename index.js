@@ -44,7 +44,7 @@ router.post('/auth', async(req, res) => {
         res.status(400).json({error: "Missing username or password"})
         return
     }
-    //try to find the udsername in the database, then see if it match with username and password
+    //try to find the username in the database
     //await finding a user
     let user = await User.findOne({username: req.body.username})
         //connection or server error
