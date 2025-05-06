@@ -4,7 +4,8 @@ const Course = db.model('Course', {
     name: {type: String, required: true},
     description: String,
     subjectArea: String,
-    credits: {type: Number}
+    credits: {type: Number},
+    username: String
 
 })
 
